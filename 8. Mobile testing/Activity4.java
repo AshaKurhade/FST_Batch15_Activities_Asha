@@ -1,15 +1,19 @@
 package Activities;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Activity4 {
@@ -43,9 +47,9 @@ public class Activity4 {
         MobileElement phoneNumber = driver.findElementByXPath("//android.widget.EditText[@text='Phone']");
         
         // Enter the text in the fields
-        firstName.sendKeys("Aaditya");
-        lastName.sendKeys("Varma");
-        phoneNumber.sendKeys("9991284782");
+        firstName.sendKeys("Ash");
+        lastName.sendKeys("pathak");
+        phoneNumber.sendKeys("9090284782");
         
         // Save the contact
         driver.findElementById("editor_menu_save_button").click();

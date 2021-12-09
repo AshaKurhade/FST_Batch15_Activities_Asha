@@ -3,6 +3,8 @@ package Activities;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.testng.annotations.Test;
@@ -19,7 +21,7 @@ public class Activity1 {
         caps.setCapability("appActivity", "com.android.calculator2.Calculator");
 
         // Instantiate Appium Driver
-        AppiumDriver<MobileElement> driver = null;
+        AppiumDriver  <MobileElement> driver = null;
         try {
             // Initialize driver
             driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);

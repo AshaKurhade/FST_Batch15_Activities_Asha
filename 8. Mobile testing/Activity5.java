@@ -1,19 +1,24 @@
 package Activities;
 
 import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class Activity5 {
-    AppiumDriver<MobileElement> driver = null;
+    AppiumDriver driver = null;
     WebDriverWait wait;
 
     @BeforeClass
@@ -45,7 +50,7 @@ public class Activity5 {
         // Enter your own phone number
         wait.until(ExpectedConditions.elementToBeClickable(MobileBy.AndroidUIAutomator(contactBoxLocator)));
         driver.findElement(MobileBy.AndroidUIAutomator(contactBoxLocator)).sendKeys("9014842678");
-        ((AndroidDriver<MobileElement>) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+        ((AndroidDriver <MobileElement>) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
         
         // Wait for message box to load
         wait.until(ExpectedConditions.elementToBeClickable(MobileBy.AndroidUIAutomator("resourceId(\"com.google.android.apps.messaging:id/compose_message_text\")")));
